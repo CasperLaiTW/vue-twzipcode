@@ -25,19 +25,19 @@
     props: {
       names: {
         type: Object,
-        default: {
-          county: '',
-          district: '',
-          zipcode: '',
-        }
+        default: (value) => Object.assign({
+          county: 'county',
+          district: 'district',
+          zipcode: 'zipcode',
+        }, value),
       },
       classNames: {
         type: Object,
-        default: {
+        default: (value) => Object.assign({
           county: '',
           district: '',
           zipcode: '',
-        },
+        }, value),
       },
       defaultCounty: {
         type: String,
