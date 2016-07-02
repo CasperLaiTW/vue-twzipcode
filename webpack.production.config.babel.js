@@ -47,6 +47,6 @@ export default {
     }),
   ],
   eslint: {
-    configFile: path.resolve(__dirname, ".eslintrc"),
+    configFile: path.resolve(__dirname, '.eslintrc'),
   },
 };

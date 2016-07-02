@@ -9,7 +9,7 @@
   "main": "dist/vue-twzipcode.js",
   "scripts": {
     "build": "node_modules/.bin/webpack -p --config=webpack.production.config.babel.js",
-    "lint": "node_modules/.bin/eslint src/**",
+    "lint": "node_modules/.bin/eslint src/** tests/**",
     "release": "standard-version --no-verify",
     "test": "karma start karma.conf.js"
   },
