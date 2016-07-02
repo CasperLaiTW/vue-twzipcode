@@ -25,6 +25,11 @@
     props: {
       names: {
         type: Object,
+        default: {
+          county: '',
+          district: '',
+          zipcode: '',
+        }
       },
       classNames: {
         type: Object,
