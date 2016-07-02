@@ -15,7 +15,7 @@ $ npm install vue-twzipcode --save
 import Vue from 'vue';
 import Twzipcode from 'vue-twzipcode';
 
-new Vue({
+const app = new Vue({
   el: '#app',
   components: {
     Twzipcode: Twzipcode,
@@ -31,9 +31,18 @@ new Vue({
   <twzipcode
     :class-names="{county: 'form-control', district: 'form-control', zipcode: 'form-control'}"
     default-zipcode="403"
+    v-ref:twzipcode
   >
   </twzipcode>
 </div>
+```
+
+### Get Values
+``` javascript
+const {county, district, zipcode } = app.$refs.twzipcode;
+
+// 台中市, 西區, 403
+console.log(county, district, zipcode);
 ```
 
 ## Props
