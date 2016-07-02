@@ -45,7 +45,7 @@
       },
       defaultDistrict: {
         type: String,
-        default: '',
+        default: Object.keys(Data[Object.keys(Data)[0]])[0],
       },
       defaultZipcode: {
         type: String,
@@ -93,10 +93,9 @@
     ready() {
       if (this.defaultZipcode) {
         this.getCountyAndDistrictFromZipcode(this.defaultZipcode);
-      } else if (this.defaultCounty && this.defaultDistrict) {
-        this.$set('county', this.defaultCounty);
-        this.$set('district', this.defaultDistrict);
       }
+      this.$set('county', this.defaultCounty);
+      this.$set('district', this.defaultDistrict);
     },
   };
 </script>
