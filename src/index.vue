@@ -45,7 +45,6 @@
       },
       defaultDistrict: {
         type: String,
-        default: Object.keys(Data[Object.keys(Data)[0]])[0],
       },
       defaultZipcode: {
         type: String,
@@ -83,7 +82,7 @@
         });
       },
       handleCountyChange() {
-        this.$set('zipcode', null);
+        this.$set('zipcode', '');
         this.$set('district', Object.keys(Data[this.county])[0]);
       },
       handleZipcodeKeyup() {
@@ -91,11 +90,15 @@
       },
     },
     ready() {
+      this.$set('county', this.defaultCounty);
+      if (this.defaultDistrict) {
+        this.$set('district', this.defaultDistrict);
+      } else {
+        this.handleCountyChange();
+      }
       if (this.defaultZipcode) {
         this.getCountyAndDistrictFromZipcode(this.defaultZipcode);
       }
-      this.$set('county', this.defaultCounty);
-      this.$set('district', this.defaultDistrict);
     },
   };
 </script>
