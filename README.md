@@ -1,4 +1,7 @@
 # Vue-TWzipcode
+
+[![Build Status](https://travis-ci.org/CasperLaiTW/vue-twzipcode.svg?branch=master)](https://travis-ci.org/CasperLaiTW/vue-twzipcode)
+
 Rewrite [jQuery-TWzipcode](https://github.com/essoduke/jQuery-TWzipcode) in Vue.js
 
 ### Screenshot
