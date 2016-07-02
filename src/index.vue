@@ -1,8 +1,8 @@
 <template>
   <div>
-    <zipcode :class-name="classNames.zipcode" :value.sync="zipcode" v-on:on-keyup="handleZipcodeKeyup"></zipcode>
-    <county :class-name="classNames.county" :value.sync="county" :counties="counties" v-on:on-change="handleCountyChange"></county>
-    <district :class-name="classNames.district" :value.sync="district" :districts="districts"></district>
+    <zipcode :name="names.zipcode" :class-name="classNames.zipcode" :value.sync="zipcode" v-on:on-keyup="handleZipcodeKeyup"></zipcode>
+    <county :name="names.county" :class-name="classNames.county" :value.sync="county" :counties="counties" v-on:on-change="handleCountyChange"></county>
+    <district :name="names.district" :class-name="classNames.district" :value.sync="district" :districts="districts"></district>
   </div>
 </template>
 
@@ -23,6 +23,9 @@
       };
     },
     props: {
+      names: {
+        type: Object,
+      },
       classNames: {
         type: Object,
         default: {

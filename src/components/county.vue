@@ -18,6 +18,10 @@
 <script lang="babel">
   export default {
     props: {
+      name: {
+        type: String,
+        default: 'county',
+      },
       className: {
         type: String
       },

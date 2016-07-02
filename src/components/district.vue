@@ -17,6 +17,10 @@
 <script lang="babel">
   export default {
     props: {
+      name: {
+        type: String,
+        default: 'district',
+      },
       className: {
         type: String
       },
