@@ -16,7 +16,7 @@
     margin-right: 4px;
   }
 </style>
-<script lang="babel">
+<script>
   export default {
     props: {
       name: {
@@ -38,7 +38,7 @@
         if (this.value.length === 3) {
           this.$dispatch('on-keyup');
         }
-      }
-    }
-  }
+      },
+    },
+  };
 </script>

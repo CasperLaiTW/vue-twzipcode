@@ -1,35 +1,16 @@
 /**
  * Created by casperlai on 2016/7/2.
  */
-
-import path from 'path';
-import strip from 'strip-loader';
 import webpack from 'webpack';
+import merge from 'webpack-merge';
+import baseConfig from './webpack.base.config';
 
-const dist = path.resolve(__dirname, 'dist');
-
-export default {
+const webpackConfig = merge(baseConfig, {
   debug: false,
   devtool: false,
   output: {
-    publicPath: './',
-    path: dist,
-    filename: 'vue-twzipcode.js',
     library: 'twzipcode',
     libraryTarget: 'umd',
-  },
-  entry: {
-    index: './src/index',
-  },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: [strip.loader('debug'), 'babel'] },
-      { test: /\.vue$/, loader: 'vue' },
-    ],
-  },
-  progress: true,
-  resolve: {
-    extensions: ['', '.js', '.vue'],
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
@@ -46,7 +27,6 @@ export default {
       }),
     }),
   ],
-  eslint: {
-    configFile: path.resolve(__dirname, '.eslintrc'),
-  },
-};
+});
+
+export default webpackConfig;
