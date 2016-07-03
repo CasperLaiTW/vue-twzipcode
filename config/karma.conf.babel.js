@@ -40,11 +40,28 @@ webpackConfig.module.loaders.some((loader) => {
   }
 });
 
+const coverageReporters = [
+  { type: 'text-summary' },
+];
+
+const reporters = [
+  'spec',
+  'coverage',
+];
+
+if (process.env.TRAVIS) {
+  coverageReporters.push({type: 'lcov', dir: 'coverage'});
+  reporters.push('coveralls');
+}  else {
+  coverageReporters.push( { type : 'html', dir : 'coverage', 'subdir' : '.' } );
+}
+
+
 export default (config) => {
   config.set({
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai'],
-    reporters: ['spec', 'coverage'],
+    reporters: reporters,
     // this is the entry file for all our tests.
     files: ['tests/index.js'],
     // we will pass the entry file to webpack for bundling.
@@ -57,11 +74,7 @@ export default (config) => {
     },
     singleRun: true,
     coverageReporter: {
-      reporters: [
-        { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' },
-        { type: 'json', subdir: '.' },
-      ],
+      reporters: coverageReporters
     },
   });
 };
