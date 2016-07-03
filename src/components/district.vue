@@ -22,14 +22,14 @@
         default: 'district',
       },
       className: {
-        type: String
+        type: String,
       },
       value: {
-        type: String
+        type: String,
       },
       districts: {
         type: Array,
       },
     },
-  }
+  };
 </script>

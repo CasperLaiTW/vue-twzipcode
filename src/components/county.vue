@@ -23,10 +23,10 @@
         default: 'county',
       },
       className: {
-        type: String
+        type: String,
       },
       value: {
-        type: String
+        type: String,
       },
       counties: {
         type: Array,
@@ -35,12 +35,12 @@
     methods: {
       onChange() {
         this.$dispatch('on-change');
-      }
+      },
     },
     ready() {
       if (this.value) {
         this.$dispatch('on-change');
       }
-    }
-  }
+    },
+  };
 </script>

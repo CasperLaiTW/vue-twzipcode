@@ -38,7 +38,7 @@
         if (this.value.length === 3) {
           this.$dispatch('on-keyup');
         }
-      }
-    }
-  }
+      },
+    },
+  };
 </script>
