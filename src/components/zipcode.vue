@@ -16,7 +16,7 @@
     margin-right: 4px;
   }
 </style>
-<script lang="babel">
+<script>
   export default {
     props: {
       name: {
