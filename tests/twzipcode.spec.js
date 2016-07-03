@@ -9,7 +9,7 @@ import Data from '../src/data';
 
 describe('Twzipcode.vue', () => {
   it('should have correct county data', () => {
-    expect(Twzipcode.data().counties).toEqual(Object.keys(Data));
+    expect(Twzipcode.data().counties).to.deep.equal(Object.keys(Data));
   });
 
   describe('no more props', () => {
@@ -20,7 +20,7 @@ describe('Twzipcode.vue', () => {
     const { twzipcode } = vm.$refs;
 
     it('should defaultCounty correct', () => {
-      expect(twzipcode.defaultCounty).toBe('基隆市');
+      expect(twzipcode.defaultCounty).to.equal('基隆市');
     });
 
     describe('on component get ready', () => {
@@ -28,21 +28,21 @@ describe('Twzipcode.vue', () => {
 
       it('should zipcode correct', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.zipcode).toBe('200');
+          expect(twzipcode.zipcode).to.equal('200');
           done();
         });
       });
 
       it('should county correct', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.county).toBe('基隆市');
+          expect(twzipcode.county).to.equal('基隆市');
           done();
         });
       });
 
       it('should district correct', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.district).toBe('仁愛區');
+          expect(twzipcode.district).to.equal('仁愛區');
           done();
         });
       });
@@ -61,21 +61,21 @@ describe('Twzipcode.vue', () => {
 
       it('zipcode is 403', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.zipcode).toBe('403');
+          expect(twzipcode.zipcode).to.equal('403');
           done();
         });
       });
 
       it('city is 台中市', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.county).toBe('台中市');
+          expect(twzipcode.county).to.equal('台中市');
           done();
         });
       });
 
       it('district is 西區', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.district).toBe('西區');
+          expect(twzipcode.district).to.equal('西區');
           done();
         });
       });
@@ -94,21 +94,21 @@ describe('Twzipcode.vue', () => {
 
       it('should zipcode is 400, because district would be get first item', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.zipcode).toBe('400');
+          expect(twzipcode.zipcode).to.equal('400');
           done();
         });
       });
 
       it('should county is 台中市', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.county).toBe('台中市');
+          expect(twzipcode.county).to.equal('台中市');
           done();
         });
       });
 
       it('should district is 中區', (done) => {
         twzipcode.$nextTick(() => {
-          expect(twzipcode.district).toBe('中區');
+          expect(twzipcode.district).to.equal('中區');
           done();
         });
       });
@@ -129,21 +129,21 @@ describe('Twzipcode.vue', () => {
 
       it('should zipcode is 403', (done) => {
         vm.$nextTick(() => {
-          expect(twzipcode.zipcode).toBe('403');
+          expect(twzipcode.zipcode).to.equal('403');
           done();
         });
       });
 
       it('should county is 台中市', (done) => {
         vm.$nextTick(() => {
-          expect(twzipcode.county).toBe('台中市');
+          expect(twzipcode.county).to.equal('台中市');
           done();
         });
       });
 
       it('should district is 西區', (done) => {
         vm.$nextTick(() => {
-          expect(twzipcode.district).toBe('西區');
+          expect(twzipcode.district).to.equal('西區');
           done();
         });
       });
@@ -165,21 +165,21 @@ describe('Twzipcode.vue', () => {
 
         it('should zipcode is 320', (done) => {
           vm.$nextTick(() => {
-            expect(twzipcode.zipcode).toBe('320');
+            expect(twzipcode.zipcode).to.equal('320');
             done();
           });
         });
 
         it('should county is 桃園市', (done) => {
           vm.$nextTick(() => {
-            expect(twzipcode.county).toBe('桃園市');
+            expect(twzipcode.county).to.equal('桃園市');
             done();
           });
         });
 
         it('should district is 中壢區', (done) => {
           vm.$nextTick(() => {
-            expect(twzipcode.district).toBe('中壢區');
+            expect(twzipcode.district).to.equal('中壢區');
             done();
           });
         });
