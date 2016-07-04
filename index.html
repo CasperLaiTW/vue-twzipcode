@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue-twzipcode by CasperLaiTW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Vue-twzipcode</h1>
+      <h2 class="project-tagline">Rewrite jQuery-TWzipcode in Vue.js</h2>
+      <a href="https://github.com/CasperLaiTW/vue-twzipcode" class="btn">View on GitHub</a>
+      <a href="https://github.com/CasperLaiTW/vue-twzipcode/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/CasperLaiTW/vue-twzipcode/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="vue-twzipcode" class="anchor" href="#vue-twzipcode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vue-TWzipcode</h1>
+
+<p><a href="https://travis-ci.org/CasperLaiTW/vue-twzipcode"><img src="https://travis-ci.org/CasperLaiTW/vue-twzipcode.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/CasperLaiTW/vue-twzipcode?branch=coverage-report"><img src="https://coveralls.io/repos/github/CasperLaiTW/vue-twzipcode/badge.svg?branch=coverage-report" alt="Coverage Status"></a></p>
+
+<p>Rewrite <a href="https://github.com/essoduke/jQuery-TWzipcode">jQuery-TWzipcode</a> in Vue.js</p>
+
+<h3>
+<a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h3>
+
+<p><img src="/screenshots/screenshot.png" alt="pic"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install vue-twzipcode --save</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">Vue</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>vue<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">Twzipcode</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>vue-twzipcode<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">const</span> <span class="pl-c1">app</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Vue</span>({
+  el<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#app<span class="pl-pds">'</span></span>,
+  components<span class="pl-k">:</span> {
+    Twzipcode<span class="pl-k">:</span> Twzipcode,
+    <span class="pl-c">// or</span>
+    Twzipcode,
+  },
+});</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>app<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">label</span>&gt;Address:&lt;/<span class="pl-ent">label</span>&gt;
+  &lt;<span class="pl-ent">twzipcode</span>
+    :<span class="pl-e">class-names</span>=<span class="pl-s"><span class="pl-pds">"</span>{county: 'form-control', district: 'form-control', zipcode: 'form-control'}<span class="pl-pds">"</span></span>
+    <span class="pl-e">default-zipcode</span>=<span class="pl-s"><span class="pl-pds">"</span>403<span class="pl-pds">"</span></span>
+    <span class="pl-e">v-ref:twzipcode</span>
+  &gt;
+  &lt;/<span class="pl-ent">twzipcode</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h3>
+<a id="get-values" class="anchor" href="#get-values" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Values</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> {<span class="pl-c1">county</span>, <span class="pl-c1">district</span>, <span class="pl-c1">zipcode</span> } <span class="pl-k">=</span> <span class="pl-smi">app</span>.<span class="pl-smi">$refs</span>.<span class="pl-smi">twzipcode</span>;
+
+<span class="pl-c">// 台中市, 西區, 403</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(county, district, zipcode);</pre></div>
+
+<h2>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Props</h2>
+
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>names</td>
+<td>Object</td>
+<td><code>{county: 'county', district: 'district', zipcode: 'zipcode'}</code></td>
+<td><code>{county: 'my-county', district: 'my-district', zipcode: 'my-zipcode'}</code></td>
+</tr>
+<tr>
+<td>classNames</td>
+<td>Object</td>
+<td><code>{county: '', district: '', zipcode: ''}</code></td>
+<td><code>{county: 'form-control', district: 'form-control', zipcode: 'form-control'}</code></td>
+</tr>
+<tr>
+<td>defaultCounty</td>
+<td>String</td>
+<td>'基隆市'</td>
+<td>403</td>
+</tr>
+<tr>
+<td>defaultDistrict</td>
+<td>String</td>
+<td>''</td>
+<td>台中市</td>
+</tr>
+<tr>
+<td>defaultZipcode</td>
+<td>String</td>
+<td>''</td>
+<td>西區</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><em>Using props to component, notice <code>kebab-case</code></em></li>
+<li>
+<strong>defaultZipcode</strong> is <code>highest</code> priority than defaultCounty and defaultDistrict. So if you using both, will be <code>ignored</code> defaultCounty and defaultDistrict props.</li>
+</ol>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>All contributions (in the form on pull requests, issues and feature-requests) are welcome.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licenced under the MIT License (MIT). Please see the <a href="LICENSE.md">license file</a> for more information.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/CasperLaiTW/vue-twzipcode">Vue-twzipcode</a> is maintained by <a href="https://github.com/CasperLaiTW">CasperLaiTW</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
