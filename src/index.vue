@@ -90,14 +90,15 @@
       },
     },
     ready() {
+      if (this.defaultZipcode) {
+        this.getCountyAndDistrictFromZipcode(this.defaultZipcode);
+        return;
+      }
       this.$set('county', this.defaultCounty);
       if (this.defaultDistrict) {
         this.$set('district', this.defaultDistrict);
       } else {
         this.handleCountyChange();
-      }
-      if (this.defaultZipcode) {
-        this.getCountyAndDistrictFromZipcode(this.defaultZipcode);
       }
     },
   };
