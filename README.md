@@ -5,8 +5,11 @@
 
 Rewrite [jQuery-TWzipcode](https://github.com/essoduke/jQuery-TWzipcode) in Vue.js
 
-### Screenshot
+## Screenshot
 ![pic](/screenshots/screenshot.png)
+
+## Example
+[Example](https://casperlaitw.github.io/vue-twzipcode/)
 
 ## Installation
 ``` sh
