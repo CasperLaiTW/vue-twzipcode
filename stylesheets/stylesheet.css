@@ -243,3 +243,8 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+.block {
+    border-bottom: solid 1px #eff0f1;
+    margin-top: 2rem;
+}
