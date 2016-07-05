@@ -16,7 +16,7 @@
     margin-right: 4px;
   }
 </style>
-<script>
+<script type="text/babel">
   export default {
     props: {
       name: {

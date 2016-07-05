@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   import _ from 'lodash';
   import Zipcode from './components/zipcode.vue';
   import County from './components/county.vue';
