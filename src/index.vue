@@ -1,6 +1,6 @@
 <template>
   <div>
-    <zipcode :name="names.zipcode" :class-name="classNames.zipcode" :value.sync="zipcode" v-on:on-keyup="handleZipcodeKeyup"></zipcode>
+    <zipcode :name="names.zipcode" :class-name="classNames.zipcode" :value.sync="zipcode" v-on:on-change="handleZipcodeChange"></zipcode>
     <county :name="names.county" :class-name="classNames.county" :value.sync="county" :counties="counties" v-on:on-change="handleCountyChange"></county>
     <district :name="names.district" :class-name="classNames.district" :value.sync="district" :districts="districts"></district>
   </div>
@@ -85,7 +85,7 @@
         this.$set('zipcode', '');
         this.$set('district', Object.keys(Data[this.county])[0]);
       },
-      handleZipcodeKeyup() {
+      handleZipcodeChange() {
         this.getCountyAndDistrictFromZipcode(this.zipcode);
       },
     },

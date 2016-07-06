@@ -5,7 +5,7 @@
           v-bind:class="[className, 'zipcode']"
           :name="name"
           :placeholder="placeholder"
-          v-on:keyup="onKeyup"
+          v-on:change="onChange"
           v-model="value"
   />
 </template>
@@ -34,9 +34,9 @@
       },
     },
     methods: {
-      onKeyup() {
+      onChange() {
         if (this.value.length === 3) {
-          this.$dispatch('on-keyup');
+          this.$dispatch('on-change');
         }
       },
     },
