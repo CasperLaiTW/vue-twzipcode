@@ -1,7 +1,7 @@
 # Vue-TWzipcode
 
 [![Build Status](https://travis-ci.org/CasperLaiTW/vue-twzipcode.svg?branch=master)](https://travis-ci.org/CasperLaiTW/vue-twzipcode)
-[![Coverage Status](https://coveralls.io/repos/github/CasperLaiTW/vue-twzipcode/badge.svg?branch=coverage-report)](https://coveralls.io/github/CasperLaiTW/vue-twzipcode?branch=coverage-report)
+[![Coverage Status](https://coveralls.io/repos/github/CasperLaiTW/vue-twzipcode/badge.svg?branch=master)](https://coveralls.io/github/CasperLaiTW/vue-twzipcode?branch=master)
 
 Rewrite [jQuery-TWzipcode](https://github.com/essoduke/jQuery-TWzipcode) in Vue.js
 
