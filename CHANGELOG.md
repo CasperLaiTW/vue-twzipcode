@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/CasperLaiTW/vue-twzipcode/compare/v1.0.4...v1.0.5) (2016-07-06)
+
+
+### Bug Fixes
+
+* Improves performance ([aaa25ef](https://github.com/CasperLaiTW/vue-twzipcode/commit/aaa25ef))
+
+
+### Performance Improvements
+
+* Impoves zipcode event ([1d2e6ae](https://github.com/CasperLaiTW/vue-twzipcode/commit/1d2e6ae))
+* Improve performance ([3d5373c](https://github.com/CasperLaiTW/vue-twzipcode/commit/3d5373c))
+* Remove uesless code ([31f987f](https://github.com/CasperLaiTW/vue-twzipcode/commit/31f987f))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/CasperLaiTW/vue-twzipcode/compare/v1.0.3...v1.0.4) (2016-07-02)
 
