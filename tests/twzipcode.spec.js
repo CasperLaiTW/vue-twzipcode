@@ -6,6 +6,7 @@
 import Vue from 'vue';
 import Twzipcode from '../src/index.vue';
 import Data from '../src/data';
+import { trigger } from './utils';
 
 describe('Twzipcode.vue', () => {
   it('should have correct county data', () => {
@@ -128,21 +129,21 @@ describe('Twzipcode.vue', () => {
       vm.$appendTo(document.body);
 
       it('should zipcode is 403', (done) => {
-        vm.$nextTick(() => {
+        twzipcode.$nextTick(() => {
           expect(twzipcode.zipcode).to.equal('403');
           done();
         });
       });
 
       it('should county is 台中市', (done) => {
-        vm.$nextTick(() => {
+        twzipcode.$nextTick(() => {
           expect(twzipcode.county).to.equal('台中市');
           done();
         });
       });
 
       it('should district is 西區', (done) => {
-        vm.$nextTick(() => {
+        twzipcode.$nextTick(() => {
           expect(twzipcode.district).to.equal('西區');
           done();
         });
@@ -164,24 +165,88 @@ describe('Twzipcode.vue', () => {
         vm.$appendTo(document.body);
 
         it('should zipcode is 320', (done) => {
-          vm.$nextTick(() => {
+          twzipcode.$nextTick(() => {
             expect(twzipcode.zipcode).to.equal('320');
             done();
           });
         });
 
         it('should county is 桃園市', (done) => {
-          vm.$nextTick(() => {
+          twzipcode.$nextTick(() => {
             expect(twzipcode.county).to.equal('桃園市');
             done();
           });
         });
 
         it('should district is 中壢區', (done) => {
-          vm.$nextTick(() => {
+          twzipcode.$nextTick(() => {
             expect(twzipcode.district).to.equal('中壢區');
             done();
           });
+        });
+      });
+    });
+  });
+
+  describe('on event', () => {
+    const vm = new Vue({
+      template: '<div>' +
+      '<twzipcode v-ref:twzipcode></twzipcode>' +
+      '</div>',
+      components: { Twzipcode },
+    }).$mount();
+    const { twzipcode } = vm.$refs;
+    describe('on component ready', () => {
+      vm.$appendTo(document.body);
+
+      it('keyin 404 to zipcode', (done) => {
+        const input = vm.$el.querySelector('input[name="zipcode"]');
+        twzipcode.$nextTick(() => {
+          input.value = '404';
+          trigger(input, 'change');
+
+          expect(twzipcode.zipcode).to.equal('404');
+          expect(twzipcode.county).to.equal('台中市');
+          expect(twzipcode.district).to.equal('北區');
+          done();
+        });
+      });
+
+      it('select the county is 台北市', (done) => {
+        const select = vm.$el.querySelector('select[name="county"]');
+        twzipcode.$nextTick(() => {
+          select.value = '台北市';
+          trigger(select, 'change');
+
+          expect(twzipcode.county).to.equal('台北市');
+          expect(twzipcode.district).to.equal('中正區');
+          twzipcode.$nextTick(() => {
+            expect(twzipcode.zipcode).to.equal('100');
+            done();
+          });
+        });
+      });
+    });
+  });
+
+  describe('Set defaultCounty is 台中市', () => {
+    const vm = new Vue({
+      template: '<div>' +
+      '<twzipcode default-county="台中市" v-ref:twzipcode></twzipcode>' +
+      '</div>',
+      components: { Twzipcode },
+    }).$mount();
+    const { twzipcode } = vm.$refs;
+
+    describe('on component ready', () => {
+      vm.$appendTo(document.body);
+
+      it('should zipcode is 400', (done) => {
+        twzipcode.$nextTick(() => {
+          expect(twzipcode.zipcode).to.equal('400');
+          expect(twzipcode.county).to.equal('台中市');
+          expect(twzipcode.district).to.equal('中區');
+          done();
         });
       });
     });
