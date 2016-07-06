@@ -37,10 +37,5 @@
         this.$dispatch('on-change');
       },
     },
-    ready() {
-      if (this.value) {
-        this.$dispatch('on-change');
-      }
-    },
   };
 </script>

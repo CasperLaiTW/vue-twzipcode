@@ -82,7 +82,6 @@
         });
       },
       handleCountyChange() {
-        this.$set('zipcode', '');
         this.$set('district', Object.keys(Data[this.county])[0]);
       },
       handleZipcodeChange() {
