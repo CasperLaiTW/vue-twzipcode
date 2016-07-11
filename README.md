@@ -57,9 +57,9 @@ console.log(county, district, zipcode);
 |-----------------|--------|-----------------------------------------|-----------------------------------------------------------------------------|
 | names           | Object | `{county: 'county', district: 'district', zipcode: 'zipcode'}` | `{county: 'my-county', district: 'my-district', zipcode: 'my-zipcode'}`       |
 | classNames      | Object | `{county: '', district: '', zipcode: ''}`                      | `{county: 'form-control', district: 'form-control', zipcode: 'form-control'}` |
-| defaultCounty   | String | '基隆市'                                                      | 403                                                                           |
-| defaultDistrict | String | ''                                                             | 台中市                                                                      |
-| defaultZipcode  | String | ''                                                             | 西區                                                                        |
+| defaultCounty   | String | '基隆市'                                                      | `default-county="台中市"`                                                                           |
+| defaultDistrict | String | ''                                                             | `default-district="西區"`                                                                      |
+| defaultZipcode  | String | ''                                                             | `default-zipcode="403"`                                                                        |
 
 1. *Using props to component, notice `kebab-case`*
 2. **defaultZipcode** is `highest` priority than defaultCounty and defaultDistrict. So if you using both, will be `ignored` defaultCounty and defaultDistrict props.
