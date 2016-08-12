@@ -1,6 +1,6 @@
 {
   "name": "vue-twzipcode",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Rewrite jQuery-TWzipcode in Vue.js",
   "repository": {
     "type": "git",
